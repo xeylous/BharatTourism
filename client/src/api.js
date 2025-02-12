@@ -25,6 +25,11 @@ export const loginUser = async (credentials) => {
   return await axios.post(`${BASE_URL}/auth/login`, credentials);
 };
 
+// Add this function for admin login
+export const loginAdmin = async (credentials) => {
+  return await axios.post(`${BASE_URL}/auth/admin-login`, credentials);
+};
+
 // Trips endpoints
 export const fetchTrips = async () => {
   return await axios.get(TRIPS_URL);
