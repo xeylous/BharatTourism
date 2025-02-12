@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/Home_page/Home_page.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import "./App.css";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
@@ -26,6 +27,7 @@ function App() {
           {/* Add additional routes here for other components */}
           {/* Example: <Route path="/about" element={<AboutPage />} /> */}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
