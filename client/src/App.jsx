@@ -7,6 +7,8 @@ import Register from "./components/Register/Register.jsx";
 import TripList from "./components/TripList/TripList.jsx";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard.jsx";
 import AddTrip from "./components/AddTrip/AddTrip.jsx";
+import About from "./components/About/About.jsx";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route path="/trips" element={<TripList />} />
           <Route path="/admin-login" element={<AdminDashboard />} />
           <Route path="/add-trip" element={<AddTrip />} />
+          <Route path="/about" element={<About />} />
           {/* Add additional routes here for other components */}
           {/* Example: <Route path="/about" element={<AboutPage />} /> */}
         </Routes>
