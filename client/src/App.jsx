@@ -9,6 +9,8 @@ import TripList from "./components/TripList/TripList.jsx";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard.jsx";
 import AdminLogin from "./components/Admin_login/Admin_login.jsx";
 import AddTrip from "./components/AddTrip/AddTrip.jsx";
+import About from "./components/About/About.jsx";
+
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route path="/trips" element={<TripList />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/add-trip" element={<AddTrip />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+              <Route path="/about" element={<About />} />
+
           {/* Add additional routes here for other components */}
           {/* Example: <Route path="/about" element={<AboutPage />} /> */}
         </Routes>
