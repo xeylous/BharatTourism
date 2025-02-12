@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { loginUser } from '../api';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../api';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ const Login = () => {
       const { data } = await loginUser(formData);
       localStorage.setItem('token', data.token);
       navigate('/trips');
-    } catch (err) {
+    } catch (err){
       setError('Invalid credentials');
     }
   };

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { fetchTrips, deleteTrip } from '../api'; // Add API functions to fetch and delete trips
+import { useState, useEffect } from 'react';
+import { fetchTrips, deleteTrip } from '../../api'; // Add API functions to fetch and delete trips
 
 const AdminDashboard = () => {
   const [trips, setTrips] = useState([]);

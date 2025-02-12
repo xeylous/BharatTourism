@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchTrips } from '../api';
+import { useEffect, useState } from 'react';
+import { fetchTrips } from '../../api';
 
 const TripList = () => {
   const [trips, setTrips] = useState([]);

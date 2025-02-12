@@ -1,33 +1,51 @@
 import axios from 'axios';
 
 // Base URL of your backend API
-const API_URL = 'http://localhost:5000/api/trips';
+const BASE_URL = 'http://localhost:5000/api';
+const TRIPS_URL = `${BASE_URL}/trips`;
 
-// Fetch all trips
+// Auth endpoints
+export const registerUser = async (formData) => {
+  const response = await fetch(`${BASE_URL}/auth/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to register');
+  }
+
+  return response.json();
+};
+
+export const loginUser = async (credentials) => {
+  return await axios.post(`${BASE_URL}/auth/login`, credentials);
+};
+
+// Trips endpoints
 export const fetchTrips = async () => {
-  return await axios.get(API_URL);
+  return await axios.get(TRIPS_URL);
 };
 
-// Fetch a single trip by ID
 export const getTrip = async (id) => {
-  return await axios.get(`${API_URL}/${id}`);
+  return await axios.get(`${TRIPS_URL}/${id}`);
 };
 
-// Add a new trip
 export const addTrip = async (tripData, token) => {
-  return await axios.post(API_URL, tripData, {
+  return await axios.post(TRIPS_URL, tripData, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 };
 
-// Update a trip
 export const updateTrip = async (id, tripData) => {
-  return await axios.put(`${API_URL}/${id}`, tripData);
+  return await axios.put(`${TRIPS_URL}/${id}`, tripData);
 };
 
-// Delete a trip
 export const deleteTrip = async (id) => {
-  return await axios.delete(`${API_URL}/${id}`);
+  return await axios.delete(`${TRIPS_URL}/${id}`);
 };

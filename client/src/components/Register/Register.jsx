@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { registerUser } from '../api';
+import { useState } from 'react';
+import { registerUser } from '../../api';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: '',
-    role: 'user',
+    password: ''
   });
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -24,8 +23,8 @@ const Register = () => {
     try {
       await registerUser(formData);
       navigate('/login');
-    } catch (err) {
-      setError('Registration failed');
+    } catch (error) {
+      setError('Registration failed: ' + error.message);
     }
   };
 
@@ -61,15 +60,6 @@ const Register = () => {
           className="w-full p-3 mb-4 border border-gray-300 rounded-md"
           required
         />
-        <select
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-          className="w-full p-3 mb-4 border border-gray-300 rounded-md"
-        >
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
         <button
           type="submit"
           className="w-full p-3 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700"

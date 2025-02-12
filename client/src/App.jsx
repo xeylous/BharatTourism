@@ -1,11 +1,12 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import HomePage from "./components/Home_page/Home_page.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import "./App.css";
+import Login from "./components/Login/Login.jsx";
+import Register from "./components/Register/Register.jsx";
+import TripList from "./components/TripList/TripList.jsx";
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard.jsx";
+import AddTrip from "./components/AddTrip/AddTrip.jsx";
 
 function App() {
   return (
@@ -14,6 +15,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/trips" element={<TripList />} />
+          <Route path="/admin-login" element={<AdminDashboard />} />
+          <Route path="/add-trip" element={<AddTrip />} />
           {/* Add additional routes here for other components */}
           {/* Example: <Route path="/about" element={<AboutPage />} /> */}
         </Routes>

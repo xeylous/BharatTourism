@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { addTrip } from '../api';
+import { useState } from 'react';
+import { addTrip } from '../../api';
 
 const AddTrip = () => {
   const [tripData, setTripData] = useState({
