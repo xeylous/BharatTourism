@@ -9,7 +9,7 @@ const HomePage = () => {
     ];
 
     return (
-        <div className="home-page bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-gray-800 min-h-screen">
+        <div className="home-page min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-gray-800">
             <header className="home-header bg-blue-600 text-white p-6 shadow-md">
                 <h1 className="text-3xl font-bold">Welcome to Bharat Tourism</h1>
                 <p className="mt-2">Explore the beauty and diversity of India</p>
